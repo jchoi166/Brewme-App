@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://Brewme-App/./src/js/index.js"],"names":["console","log"],"mappings":"mBAEAA,QAAQC,IAAI,U","file":"main.js","sourcesContent":["import '../sass/style.scss'\r\n\r\nconsole.log('hello')"],"sourceRoot":""}
