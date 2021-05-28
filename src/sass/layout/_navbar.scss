@@ -1,0 +1,25 @@
+.navbar {
+    height: 7rem; 
+    display: flex; 
+    justify-content: space-between;
+    padding: 2rem; 
+    position: fixed; 
+    width: 100%;
+
+    &__logo {
+        display: flex; 
+        align-items: center;
+        
+        img {
+            height: 3rem;
+            margin-right: 1rem; 
+        }
+    }
+
+    &__link-container {
+        width: 25%; 
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+    }
+}

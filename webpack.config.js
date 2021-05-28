@@ -58,10 +58,10 @@ module.exports = {
     devtool: "source-map",
     devServer: {
         contentBase: "./dist",
-        hot: true
+        // hot: false
     },
 
-    stats: {
-        children: true,
-      },
+    // stats: {
+    //     children: true,
+    //   },
 }

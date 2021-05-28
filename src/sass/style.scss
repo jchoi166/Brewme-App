@@ -1,5 +1,6 @@
 @use "./abstracts" as *;
-
+@use "./layout/" as *;
+@use "./base/" as *;
 
 body {
     // background-color: $color-blue;
