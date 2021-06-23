@@ -5,6 +5,7 @@ import {elements} from "./base.js"
 let brewArray = []
 
 const createListItem = (item) => {
+    console.log(item.name)
     const markup = `<ul class="brewery-item" data-id="${item.id}">${item.name}</ul>`
     elements.breweryList.insertAdjacentHTML("beforeend", markup)
 }
@@ -43,6 +44,19 @@ const getBreweryList = async (state) => {
 
 
 // CONTROLLER 
+
+// creates new search on landing page 
+
+elements.landingForm.addEventListener("submit", event => {
+    event.preventDefault()
+    let state = elements.landingInput.value
+    
+    elements.breweryDisplay.innerHTML = ''
+    elements.breweryList.innerHTML = ''
+    elements.breweryInput.value = state
+    getBreweryList(state)
+
+})
 
 // creates new brewery list on submit
 

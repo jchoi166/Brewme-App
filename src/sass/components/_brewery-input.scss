@@ -1,0 +1,30 @@
+@use "../abstracts/" as *;
+
+// .brewery-input {
+//     // grid-row: 2 / 3;
+//     // grid-column: 1 / 2;
+
+//     font-family: $font-family-header;
+//     font-size: 6rem;
+//     font-weight: 700;
+//     margin-bottom: 5rem;
+
+//     &--text {
+//         background-color: transparent;
+//         border: none; 
+//         border-bottom: solid 3px $color-white;
+//         outline: none;
+//         width: 80%;
+//         font-family: inherit;
+//         font-size: inherit;
+//         font-weight: inherit;
+//         color: inherit; 
+        
+//         &::placeholder {
+//             font-weight: 300; 
+//             font-style: italic;
+//             font-size: 4rem;
+//             color: rgba(255, 255, 255, 0.801);
+//         }
+//     }
+// }

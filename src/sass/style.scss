@@ -1,7 +1,5 @@
-@use "./abstracts" as *;
-@use "./layout/" as *;
-@use "./base/" as *;
+@use "./abstracts";
+@use "./base";
+@use "./components";
+@use "./layout";
 
-body {
-    // background-color: $color-blue;
-}

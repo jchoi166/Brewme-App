@@ -1,0 +1,34 @@
+@use "../abstracts/" as *;
+
+.search {
+    height: 100vh;
+    background-color: $color-yellow-light;
+    padding: 7rem 0;
+
+    &__form {
+
+    }
+
+    &__display {
+        background-color: $color-white;
+        height: 100%; 
+        border-radius: .5rem;
+        box-shadow: 1px 1px 5px 2px rgba(172, 172, 172, 0.2);
+        padding: 3rem;
+
+        display: grid; 
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__input {
+        width: 100%; 
+
+        input {
+            width: 60%; 
+        }
+    }
+
+    &__results {
+        grid-column: 2 / 3;
+    }
+}

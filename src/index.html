@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Merriweather:ital,wght@0,400;0,700;1,300;1,400&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     
     <div class="navbar">
         <div class="navbar__logo">
-            <img src="./images/pngaaa.com-1813026.png">
-            <div>Brewme</div> 
+            <img src="./images/logo.png">
+            <div class="navbar__logo--text">Brewme</div> 
         </div>
         <div class="navbar__link-container">
             <div class="navbar__link">Favorites</div>    
@@ -19,21 +23,43 @@
             <div class="navbar__link">Search</div>    
         </div>
     </div>
+
     <div class="landing">
-        
+        <!-- <form class="search-card">
+            <div class="search-card__title">
+                I'm looking for a brewery in 
+            </div>
+        </form>
+        <form class="brewery-input">
+            <p>Find me a brewery in</p>
+            <input class="brewery-input--text" type="text" placeholder="Type your state here!">.
+            <button class="brewery-input--button" type="button">Find Breweries</button>
+        </form> -->
+        <div class="container">
+            <form class="landing__search">
+                <p>Find me a brewery in</p>
+                <input class="landing__input" type="text" placeholder="Type your state here!">.
+                <!-- <button class="brewery-input--button" type="button">Find Breweries</button> -->
+            </form>
+        </div>
     </div>
 
     <div class="search">
-        <form class="brewery-input">
-            <h3>Type in your state to generate a list of breweries!</h3>
-            <input type="text">
-            <button type="button">Find Breweries</button>
-        </form>
-        <div class="brewery-list">
-            <ul></ul>
-        </div>
-        <div class="brewery-display">
-            
+        <div class="search__display container">
+            <div class="search__form">
+                <form class="search__input">
+                    <input class="search__input--text" type="text" placeholder="Type your state here!">.
+                    <button class="search__input--button" type="button">Find Breweries</button>
+                </form>
+                <ul class="search__list">
+                    <li class="list-item">
+
+                    </li>
+                </ul> 
+            </div>
+            <div class="search__results">
+                
+            </div>
         </div>
     </div>
 </body>

@@ -1,3 +1,5 @@
+@use "../abstracts/" as *;
+
 .navbar {
     height: 7rem; 
     display: flex; 
@@ -5,6 +7,8 @@
     padding: 2rem; 
     position: fixed; 
     width: 100%;
+    font-family: $font-family-header;
+    color: $color-white;
 
     &__logo {
         display: flex; 
@@ -14,12 +18,23 @@
             height: 3rem;
             margin-right: 1rem; 
         }
+
+        &--text {
+            font-family: $font-family-logo;
+            font-size: 3rem;
+            // color: $color-yellow-light;
+            padding-top: 5px;
+        }
     }
 
     &__link-container {
-        width: 25%; 
+        // width: 25%; 
         display: flex; 
-        justify-content: space-between;
         align-items: center;
+        font-size: 2rem;
+    }
+
+    &__link {
+        margin-left: 3rem; 
     }
 }
