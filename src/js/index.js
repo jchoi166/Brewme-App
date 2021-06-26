@@ -6,7 +6,7 @@ let brewArray = []
 
 const createListItem = (item) => {
     console.log(item.name)
-    const markup = `<ul class="brewery-item" data-id="${item.id}">${item.name}</ul>`
+    const markup = `<ul class="list-item" data-id="${item.id}"><span>${item.name}</span><span>${item.city} ${item.postal_code}</span></ul>`
     elements.breweryList.insertAdjacentHTML("beforeend", markup)
 }
 
@@ -74,8 +74,9 @@ elements.breweryForm.addEventListener("submit", event => {
 
 elements.breweryList.addEventListener("click", event => {
     // console.log(event.target.dataset.id)
-    if (event.target.className="brewery-item") {
-        let brewID = event.target.dataset.id
+    let listItem = event.target.closest(".list-item")
+    if (listItem) {
+        let brewID = listItem.dataset.id
         let brewery = brewArray.find(obj => obj.id == brewID)
 
         console.log(brewery)

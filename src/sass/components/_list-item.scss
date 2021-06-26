@@ -1,0 +1,20 @@
+@use "../abstracts/" as *;
+
+.list-item {
+    list-style-type: none;
+    // background-color: lavender;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-style: italic;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 5px 5px 0px rgb(172 172 172 / 26%);
+
+    span:first-child {
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-style: normal;
+    }
+}
