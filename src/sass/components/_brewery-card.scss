@@ -1,0 +1,57 @@
+@use "../abstracts/variables" as *;
+
+.brewery-card {
+    border-radius: 5px;
+    box-shadow: 0px 1px 0px 1px rgb(115 115 115 / 30%);
+
+    &__image {
+        
+        img {
+            width: 100%; 
+            border-radius: 5px 5px 0 0;
+        }
+    }
+
+    &__info {
+        font-size: 2rem;
+        padding: 1.7rem 2rem; 
+
+        h2 {
+            font-family: "Merriweather", serif;
+            margin-bottom: 1.3rem; 
+        }
+
+        p {
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+
+        &--cta {
+            display: flex; 
+            // justify-content: space-between;
+            margin-top: 1rem; 
+            color: $color-green-light;
+            transform: translate(-1rem, .7rem);
+            // box-sizing: content-box;
+            
+            a {
+                text-decoration: none;
+                color: inherit; 
+            }
+        }
+
+        &--cta > * {
+            // width: 32%;
+            // text-align: center; 
+            margin-right: 2rem;
+            border-radius: 2px;
+            padding: .7rem 1.1rem;
+            transition: background-color .2s;
+        }
+
+        &--cta > *:hover {
+            background-color: $color-green-hover;
+            cursor: pointer; 
+        }
+    }
+}

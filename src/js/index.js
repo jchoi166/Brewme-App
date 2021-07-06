@@ -1,5 +1,6 @@
 import '../sass/style.scss'
 import {elements} from "./base.js"
+const images = require.context("../images/", true, /\.(png|svg|jpg|gif)$/);
 
 
 let brewArray = []
@@ -13,10 +14,20 @@ const createListItem = (item) => {
 const displayBrewery = (brewery) => {
     const markup = `
     <div class="brewery-card">
-        <h2>${brewery.name}</h2>
-        <p>${brewery.street || ''}</p>
-        <p>${brewery.city}, ${brewery.state} ${brewery.postal_code}</p>
-        <p>${brewery.phone}</p>
+        <div class="brewery-card__image">
+            <img src=${images('./landing-bg.jpg')} alt="">
+        </div>
+        <div class="brewery-card__info">
+            <h2>${brewery.name}</h2>
+            <p>${brewery.street || ''}</p>
+            <p>${brewery.city}, ${brewery.state} ${brewery.postal_code}</p>
+            <p>${brewery.phone}</p>
+            <div class="brewery-card__info--cta">
+                <a href="${brewery.website_url}" target="_blank">Visit Website</a>
+                <div>Like</div>
+                <div>Share</div>
+            </div>
+        </div>
     </div>
     `
     elements.breweryDisplay.innerHTML = ''
