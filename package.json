@@ -39,5 +39,8 @@
   "bugs": {
     "url": "https://github.com/jchoi166/Brewme-App/issues"
   },
-  "homepage": "https://github.com/jchoi166/Brewme-App#readme"
+  "homepage": "https://github.com/jchoi166/Brewme-App#readme",
+  "dependencies": {
+    "body-scroll-lock": "^4.0.0-beta.0"
+  }
 }

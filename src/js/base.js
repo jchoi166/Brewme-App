@@ -4,5 +4,7 @@ export const elements = {
     breweryForm: document.querySelector('.search__input'),
     breweryDisplay: document.querySelector('.search__results'),
     landingForm: document.querySelector('.landing__search'),
-    landingInput: document.querySelector('.landing__input')
+    landingInput: document.querySelector('.landing__input'),
+    searchContainer: document.querySelector('.search'),
+    landingContainer: document.querySelector('.landing'),
 }

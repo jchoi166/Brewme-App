@@ -2,6 +2,10 @@ import '../sass/style.scss'
 import {elements} from "./base.js"
 const images = require.context("../images/", true, /\.(png|svg|jpg|gif)$/);
 
+// Body Scroll Lock
+const bodyScrollLock = require('body-scroll-lock');
+const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+const enableBodyScroll = bodyScrollLock.enableBodyScroll;
 
 let brewArray = []
 
@@ -66,6 +70,11 @@ elements.landingForm.addEventListener("submit", event => {
     elements.breweryList.innerHTML = ''
     elements.breweryInput.value = state
     getBreweryList(state)
+    enableBodyScroll(elements.landingContainer)
+
+    setTimeout(function(){
+        elements.searchContainer.scrollIntoView({ behavior: "smooth" })
+    }, 500)
 
 })
 
@@ -94,3 +103,12 @@ elements.breweryList.addEventListener("click", event => {
         displayBrewery(brewery)
     }
 })
+
+window.onload = (event) => {
+    console.log('page is fully loaded');
+    disableBodyScroll(elements.landingContainer)
+};
+
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
