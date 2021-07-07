@@ -12,6 +12,7 @@
     box-shadow: 0px 1px 0px 1px rgb(115 115 115 / 30%);;
     border-radius: 5px;
     transition: all .1s;
+    cursor: pointer;
 
     &:not(:last-child) {
         margin-bottom: 2rem;
@@ -23,8 +24,12 @@
         font-style: normal;
     }
 
-    &:hover{
-        transform: translateX(.5rem);
-        background-color: $color-list-hover;
+    &:hover {
+        @include listHover;
     }
+}
+
+
+.list-hover {
+    @include listHover;
 }

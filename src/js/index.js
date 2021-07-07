@@ -1,5 +1,7 @@
 import '../sass/style.scss'
-import {elements} from "./base.js"
+import {elements} from "./base"
+import './intersection'
+
 const images = require.context("../images/", true, /\.(png|svg|jpg|gif)$/);
 
 // Body Scroll Lock
@@ -15,6 +17,14 @@ const createListItem = (item) => {
     elements.breweryList.insertAdjacentHTML("beforeend", markup)
 }
 
+const formatPhone = num => {
+    const areaCode = '(' + num.slice(0,3) + ')'
+    const firstThree = num.slice(3,6)
+    const lastFour = num.slice(-4)
+    const newNum = [areaCode, firstThree, lastFour].join('-')
+    return newNum
+}
+
 const displayBrewery = (brewery) => {
     const markup = `
     <div class="brewery-card">
@@ -25,7 +35,7 @@ const displayBrewery = (brewery) => {
             <h2>${brewery.name}</h2>
             <p>${brewery.street || ''}</p>
             <p>${brewery.city}, ${brewery.state} ${brewery.postal_code}</p>
-            <p>${brewery.phone}</p>
+            <p>${brewery.phone ? formatPhone(brewery.phone) : '' }</p>
             <div class="brewery-card__info--cta">
                 <a href="${brewery.website_url}" target="_blank">Visit Website</a>
                 <div>Like</div>
@@ -51,6 +61,10 @@ const getBreweryList = async (state) => {
         data.forEach(item => {
             createListItem(item)            
         })
+
+        displayBrewery(brewArray[0])
+        const firstListItem = document.querySelector(`[data-id='${brewArray[0].id}']`)
+        firstListItem.classList.add("list-hover")
 
     } catch(err) {
         console.log(err)
@@ -84,6 +98,7 @@ elements.breweryForm.addEventListener("submit", event => {
     event.preventDefault()
     let state = elements.breweryInput.value
     
+    elements.landingInput.value = ''
     elements.breweryDisplay.innerHTML = ''
     elements.breweryList.innerHTML = ''
     getBreweryList(state)
@@ -93,22 +108,36 @@ elements.breweryForm.addEventListener("submit", event => {
 // displays new brewery item on click
 
 elements.breweryList.addEventListener("click", event => {
-    // console.log(event.target.dataset.id)
     let listItem = event.target.closest(".list-item")
     if (listItem) {
+        
         let brewID = listItem.dataset.id
         let brewery = brewArray.find(obj => obj.id == brewID)
+        
+        const list = document.querySelectorAll(".list-item")
+
+        for (const item of list) {
+            item.classList.remove("list-hover")
+        }
+        // list.forOf(item => {
+        // })
+        listItem.classList.add("list-hover")
 
         console.log(brewery)
         displayBrewery(brewery)
     }
 })
 
+// Makes sure landing page is unscrollable until a search is made
+
 window.onload = (event) => {
     console.log('page is fully loaded');
     disableBodyScroll(elements.landingContainer)
 };
 
+// Resets page back to landing page on refresh
+
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
+

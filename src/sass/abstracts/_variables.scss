@@ -1,4 +1,3 @@
-$color-blue: blue; 
 
 
 // Colors 
@@ -20,3 +19,11 @@ $color-list-hover: #f0f0f073;
 $font-family-logo: "Courgette", cursive;
 $font-family-header: "Merriweather", serif;
 $font-family-text: "Source Sans Pro", sans-serif;
+
+
+// Mixins
+
+@mixin listHover {
+    transform: translateX(.5rem);
+    background-color: $color-list-hover;
+}

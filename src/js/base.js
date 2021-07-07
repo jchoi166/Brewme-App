@@ -7,4 +7,6 @@ export const elements = {
     landingInput: document.querySelector('.landing__input'),
     searchContainer: document.querySelector('.search'),
     landingContainer: document.querySelector('.landing'),
+    navbar: document.querySelector('.navbar'),
+    navbarScrolled: document.querySelector('.navbar--scrolled'),
 }

@@ -49,10 +49,12 @@ module.exports = {
 
     plugins: [
         new CleanWebpackPlugin(),
-        new MiniCssExtractPLugin(),
         new HtmlWebpackPlugin({
-            template: "src/index.html"
+            template: "src/index.html",
+            inject: "body", // Injecting script tag into body because for some reason, css keeps loading after script tag in Head. This is causing CSS animations to fire on page load, due to CSS styles being applied after dom content is loaded.
         }),
+        new MiniCssExtractPLugin(
+        ),
     ],
 
     devtool: "source-map",
