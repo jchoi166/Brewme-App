@@ -11,7 +11,6 @@
     background-color: transparent;
     position: absolute;
     transition: all .9s;
-    // position: fixed; 
 
     &__logo {
         display: flex; 
@@ -25,26 +24,72 @@
         &--text {
             font-family: $font-family-logo;
             font-size: 3rem;
-            // color: $color-yellow-light;
             padding-top: 5px;
         }
     }
 
+    &__ham-wrapper {
+        height: 4rem;
+        width: 4rem;
+        margin-right: 2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 0;
+    }
+
+    &__ham-icon {
+        position: relative;
+        height: 2px;
+        width: 3rem;
+        background-color: white;
+        transition: width .2s;
+        display: none; 
+
+        @include respond(phone) {
+            display: block; 
+        }
+
+        &::before,
+        &::after {
+            height: 2px;
+            width: 3rem;
+            background-color: inherit;
+            content: "";
+            position: absolute;
+            right: 0;
+            transition: all .2s;
+        }
+
+        &::before {top: -.8rem;}
+        &::after {top: .8rem;}
+
+        &--scrolled {
+            @extend .navbar__ham-icon;
+            background-color: $color-yellow-dark;
+        }
+    }
+
     &__link-container {
-        // width: 25%; 
         display: flex; 
         align-items: center;
         font-size: 2rem;
+
+        @include respond(phone) {
+            display: none; 
+        }
     }
 
     &__link {
         margin-left: 3rem; 
+        padding-top: 1rem;
     }
 
     &--scrolled {
+        @extend .navbar;
         background-color: $color-yellow-light;
         position: fixed; 
-        // display: none; 
         opacity: 0; 
         transform: translateY(-7.1rem);
         transition: all .3s;

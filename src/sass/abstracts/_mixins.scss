@@ -1,0 +1,21 @@
+@use "./variables" as *; 
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content };   // 600px  600/16 = 37.5
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) { @content };   // 900px
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) { @content };     // 1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) { @content };    // 1800px
+    }
+};
+
+@mixin listHover {
+    transform: translateX(.5rem);
+    background-color: $color-list-hover;
+}
