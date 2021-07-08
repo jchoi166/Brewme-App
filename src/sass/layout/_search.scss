@@ -18,6 +18,10 @@
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         // grid-template-columns: repeat(5, minmax(200px, 1fr));
         grid-gap: 2rem;
+
+        @include respond(tab-port) {
+            display: block; 
+        }
     }
 
     &__form {
@@ -59,5 +63,9 @@
 
     &__results {
         grid-column: 3 / -1;
+
+        @include respond(tab-port) {
+            margin-top: 2rem; 
+        }
     }
 }
