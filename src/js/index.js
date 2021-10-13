@@ -66,14 +66,14 @@ elements.breweryList.addEventListener("click", event => {
 
 // Makes sure landing page is unscrollable until a search is made
 
-// window.onload = (event) => {
-//     console.log('page is fully loaded');
-//     disableBodyScroll(elements.landingContainer)
-// };
+window.onload = (event) => {
+    console.log('page is fully loaded');
+    disableBodyScroll(elements.landingContainer)
+};
 
-// // Resets page back to landing page on refresh
+// Resets page back to landing page on refresh
 
-// window.onbeforeunload = function () {
-//     window.scrollTo(0, 0);
-// }
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
 

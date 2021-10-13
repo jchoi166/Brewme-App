@@ -60,6 +60,7 @@ module.exports = {
     devtool: "source-map",
     devServer: {
         contentBase: "./dist",
+        port: 8081,
         // hot: false
     },
 
